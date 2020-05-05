@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<div id="tabs">
+  <button (click)="onClick('recent')">Recently added</button>
+  <button (click)="onClick('go')">Go</button>
+  <button (click)="onClick('settings')">Settings</button>
+</div>
+<div>
+    <app-recently-tab *ngIf="isRecent"></app-recently-tab>
+    <app-go-tab *ngIf="isGo"></app-go-tab>
+    <app-settings-tab *ngIf="isSettings"></app-settings-tab>
+</div>

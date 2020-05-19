@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RecentlyTabComponent } from './recently-tab/recently-tab.component';
 import { GoTabComponent } from './go-tab/go-tab.component';
 import { SettingsTabComponent } from './settings-tab/settings-tab.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SettingsTabComponent } from './settings-tab/settings-tab.component';
     SettingsTabComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

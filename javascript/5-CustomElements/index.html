@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        customElements.define('my-tree',
+            class extends HTMLElement {
+                constructor() {
+                    super()
+                }
+            }
+        );
+        customElements.define('my-leaf',
+            class extends HTMLElement {
+                constructor() {
+                    super()
+                }
+            }
+        )
+        window.customElementsTree = function(json)
+        {
+            const myTree = document.createElement('my-tree')
+            myTree.setAttribute('id', json.id);
+            customElementsLeaf(myTree, json.items);
+            document.body.appendChild(myTree);
+        };
+        window.customElementsLeaf = function(parent, elements)
+        {
+            for (let index = 0; index < elements.length; index++) {
+                const element = elements[index];
+                var curHtmlElement;        
+                if(element.items)
+                {
+                    var curHtmlElement = document.createElement('my-tree');
+                    curHtmlElement.setAttribute('id', element.id);
+                    customElementsLeaf(curHtmlElement, element.items);
+                } else {
+                    var curHtmlElement = document.createElement('my-leaf');
+                    curHtmlElement.setAttribute('id', element.id);
+                }                
+                parent.appendChild(curHtmlElement);
+            }
+        };
+        var testObject1 = {
+            "id": 1,
+            "items": [{
+                "id": 2,
+                "items": [{ "id": 3 }]
+            }]
+        };
+        customElementsTree(testObject1)
+        var testObject2 = {
+            "id": 1,
+            "items": [{
+                "id": 2,
+                "items": [{ "id": 3 }]
+            },
+            {
+                "id": 21,
+                "items": [{ 
+                    "id": 31 
+                },
+                { 
+                    "id": 41
+                }]
+            }]
+        };
+        customElementsTree(testObject2)
+        </script>
+</body>
+</html>

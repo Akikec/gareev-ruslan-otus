@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WordAdditionService } from './word-addition.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,9 @@ export class AppComponent implements OnInit {
   isGo: Boolean;
   isSettings: Boolean;
   title = 'Learn English';
+  response = {};
+
+  constructor(private WordAdditionService: WordAdditionService) {}
 
   ngOnInit() {
     this.isRecent = true;

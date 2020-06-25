@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React</title>
+    <style>
+        .weather-city-box { width: 600px; border: 1px #bbb solid; border-radius: 5px; background-color: #eee; margin: 5px; padding: 10px; }
+        .header-box { border-bottom: 1px #bbb dashed; width: 100%; }
+        .search-box { float: left; margin: 2px 5px 10px 5px; }
+        .search-box input { min-width: 200px; }
+        .list-cities-box { float: right; margin: 2px 5px 10px 5px; }
+        .list-cities-box select { min-width: 100px;}
+        .search-button { margin-left: 5px; }
+        .weather-data-box { margin: 10px 5px; }
+        .info-box, .filter-box, .data-box { margin: 10px 5px; }
+        .add-city-box { float: right; }
+        .clearfix {
+            clear: both;
+            display: block;
+            content: '';
+        }
+        table { border-collapse: collapse; }
+        th, td { padding: 5px; border: 1px #bbb solid; background-color: #fff; text-align: center; }
+        td:first-child { text-align: left; }
+        #weather-forecast { display: none; }
+        .btn-filter { padding: 3px 10px 4px 10px; margin: 5px 5px 15px 0; border: 1px #bbb solid; background-color: #fff; border-radius: 5px; text-align: center; cursor: pointer; }
+        .btn-filter.active { background-color: #999; color: #fff }
+    </style>
+</head>
+
+<body>
+<div id="root"></div>
+</body>
+
+</html>

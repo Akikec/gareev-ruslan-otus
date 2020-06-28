@@ -1,0 +1,12 @@
+{
+  "name": "4-sequential_parallel_request",
+  "version": "1.0.0",
+  "description": "4",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "request": "node request.js"
+  },
+  "author": "Ruslan",
+  "license": "ISC"
+}

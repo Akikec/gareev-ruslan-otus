@@ -38,12 +38,13 @@ const constRequest = {
     N: Number(scriptArgs[0]) || 5,
     Parallel: scriptArgs[1] === "true" || false
 };
-const server = http.createServer((req, res) => {
-    res.statusCode = 200
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('');
-})
-server.listen(constRequest.port, constRequest.hostname, () => {
-    console.log(`Server running`)
+const server = http.get('http://localhost:3000', (res) => {
     start(constRequest.N, constRequest.Parallel);
+    // res.statusCode = 200
+    // res.setHeader('Content-Type', 'text/plain');
+    // res.end('');
 })
+// server.listen(constRequest.port, constRequest.hostname, () => {
+//     console.log(`Server running`)
+//     start(constRequest.N, constRequest.Parallel);
+// })
